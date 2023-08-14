@@ -16,6 +16,7 @@ const Home = () => {
       }
 
       const json = await response.json();
+      console.log(json);
       dispatch({ type: "SET_POSTS", payload: json });
     };
 

@@ -9,7 +9,9 @@ const Post = ({ post }) => {
   return (
     <div className="w-full my-[20px] mx-auto bg-white rounded p-[20px] shadow-md">
       <div className="flex justify-between">
-        <h1 className="text-2xl font-semibold text-primary">{title}</h1>
+        <h1 className="text-2xl max-sm:text-xl font-semibold text-primary">
+          {title}
+        </h1>
 
         <div className="flex">
           <Link to={`/editPost/${_id}`}>
@@ -20,8 +22,8 @@ const Post = ({ post }) => {
       </div>
 
       <div className="flex flex-col mt-4">
-        <span className="text-lg mb-1">{description}</span>
-        <span className="text-lg">
+        <span className="text-lg max-sm:text-base mb-1">{description}</span>
+        <span className=" text-base max-sm:text-sm">
           {formatDistanceToNow(new Date(createdAt), {
             addSuffix: true,
           })}

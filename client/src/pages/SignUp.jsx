@@ -1,28 +1,26 @@
 import { useState } from "react";
 import UserForm from "../components/UserForm";
 
-const Login = () => {
+const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState("error!");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("error");
-    console.log(username, password, "Login");
+    setError("error!");
+    console.log(username, password, "signup");
   };
 
   return (
     <UserForm
       handleSubmit={handleSubmit}
-      username={username}
       setUsername={setUsername}
-      password={password}
       setPassword={setPassword}
-      formType="Login"
+      formType="Sign up"
       error={error}
     />
   );
 };
 
-export default Login;
+export default SignUp;
