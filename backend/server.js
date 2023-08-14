@@ -41,5 +41,5 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.status(201).json({ message: "Connected to Backend!" });
+  res.json("Connected to Backend!");
 });
