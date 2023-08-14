@@ -27,19 +27,24 @@ app.use((req, res, next) => {
 app.use("/api/posts", postRoutes);
 
 // Connect to DB
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    // Listening for requests at a certain port
-    const PORT = process.env.PORT || 4000;
-    app.listen(PORT, () => {
-      console.log("Connected to DB and listening on port", PORT);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+mongoose.connect(process.env.MONGO_URI);
+// mongoose
+//   .connect(process.env.MONGO_URI)
+//   .then(() => {
+//     // Listening for requests at a certain port
+//     const PORT = process.env.PORT || 4000;
+//     app.listen(PORT, () => {
+//       console.log("Connected to DB and listening on port", PORT);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 app.get("/", (req, res) => {
   res.json("Connected to Backend!");
+});
+
+app.listen(4000, () => {
+  console.log("Connected to DB and listening on port 4000");
 });
