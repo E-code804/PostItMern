@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+:root {
+  --primary: #1a83ac;
+  --primary-dark: #125d7b;
+  --errorcolor: #e7195a;
+  --primary-bg: #f1f1f1;
+}
+
+body {
+  background-color: var(--primary-bg);
+}
+
+/* Navbar Styles */
+.logout {
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: var(--primary);
+  transition: all 0.3s ease 0s;
+}
+
+.logout:hover {
+  background-color: var(--primary);
+  color: white;
+  transition: 0.5s;
+}
+
+.login {
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.login:hover {
+  background-color: var(--primary-dark);
+  transition: 0.5s;
+}
+
+.signup {
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: var(--primary);
+  transition: all 0.3s ease 0s;
+}
+
+.signup:hover {
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+/* Post Form */
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--errorcolor);
+  color: var(--errorcolor);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--errorcolor);
+}
