@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { url } from "../backendURL";
 import { usePostContext } from "../hooks/usePostContext";
 
 const AddPost = () => {
@@ -10,7 +11,7 @@ const AddPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const post = { title, description };
-    const response = await fetch("http://localhost:4000/api/posts", {
+    const response = await fetch(url + "/api/posts", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {

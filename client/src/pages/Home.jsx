@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { url } from "../backendURL";
 import AddPost from "../components/AddPost";
 import Post from "../components/Post";
 import { usePostContext } from "../hooks/usePostContext";
@@ -8,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:4000/api/posts");
+      const response = await fetch(url + "/api/posts");
 
       if (!response.ok) {
         throw Error("Could not fetch posts");

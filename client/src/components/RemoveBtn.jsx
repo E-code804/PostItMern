@@ -1,5 +1,6 @@
 import React from "react";
 import { HiOutlineTrash } from "react-icons/hi";
+import { url } from "../backendURL";
 import { usePostContext } from "../hooks/usePostContext";
 
 const RemoveBtn = ({ id }) => {
@@ -10,7 +11,7 @@ const RemoveBtn = ({ id }) => {
     );
 
     if (confirm) {
-      const response = await fetch(`http://localhost:4000/api/posts/${id}`, {
+      const response = await fetch(`${url}/api/posts/${id}`, {
         method: "DELETE",
       });
 

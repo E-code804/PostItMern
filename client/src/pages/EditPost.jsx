@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { url } from "../backendURL";
 import EditPostForm from "../components/EditPostForm";
 
 const EditPost = () => {
@@ -9,7 +10,7 @@ const EditPost = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await fetch(`http://localhost:4000/api/posts/${id}`);
+      const response = await fetch(`${url}/api/posts/${id}`);
       const json = await response.json();
 
       if (response.ok) {

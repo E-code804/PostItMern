@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { url } from "../backendURL";
 
 const EditPostForm = ({ id, title, description }) => {
   const [error, setError] = useState("");
@@ -11,7 +12,7 @@ const EditPostForm = ({ id, title, description }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:4000/api/posts/${id}`, {
+      const response = await fetch(`${url}/api/posts/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
