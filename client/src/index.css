@@ -87,6 +87,12 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+form button:hover {
+  transition: 0.5s;
+  background: var(--primary-dark);
 }
 
 div.error {
