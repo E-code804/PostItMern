@@ -1,4 +1,5 @@
 import React from "react";
+import { BeatLoader } from "react-spinners";
 
 const UserForm = ({
   handleSubmit,
@@ -11,7 +12,7 @@ const UserForm = ({
   isLoading,
 }) => {
   return (
-    <div className="flex flex-col mt-5 items-center bg-gray-100">
+    <div className="flex flex-col mt-5 items-center">
       <div className="w-[50%] max-lg:w-[70%] p-6 bg-white rounded shadow-md">
         <h2 className="text-3xl max-lg:text-2xl font-semibold mb-4">
           {formType}
@@ -37,13 +38,21 @@ const UserForm = ({
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button
-            disabled={isLoading}
-            className="w-full primary-btn text-lg max-lg:text-base"
-            type="submit"
-          >
-            {formType}
-          </button>
+          {isLoading ? (
+            <div className="w-full flex justify-center">
+              <div className="">
+                <BeatLoader color={"#1a83ac"} size={10} loading={true} />
+              </div>
+            </div>
+          ) : (
+            <button
+              disabled={isLoading}
+              className="w-full primary-btn text-lg max-lg:text-base"
+              type="submit"
+            >
+              {formType}
+            </button>
+          )}
         </form>
         <div className="bg-white mt-5 rounded">
           <p className="underline">
