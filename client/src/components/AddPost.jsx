@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { url } from "../backendURL";
+import { useAuthContext } from "../hooks/useAuthContext";
 import { usePostContext } from "../hooks/usePostContext";
 
 const AddPost = () => {
@@ -7,15 +8,22 @@ const AddPost = () => {
   const [description, setDescription] = useState("");
   const [error, setError] = useState("");
   const { dispatch } = usePostContext();
+  const { user } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!user) {
+      setError("You must be logged in to add a post");
+      return;
+    }
     const post = { title, description };
     const response = await fetch(url + "/api/posts", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
     });
     const json = await response.json();

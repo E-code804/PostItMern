@@ -6,8 +6,9 @@ const hadTitleAndDescription = (title, description) => {
 };
 // Get all posts
 const getAllPosts = async (req, res) => {
+  const user_id = req.user._id;
   try {
-    const posts = await Post.find().sort({ createdAt: -1 });
+    const posts = await Post.find({ user_id }).sort({ createdAt: -1 });
     res.status(200).json(posts);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -43,7 +44,8 @@ const createPost = async (req, res) => {
   }
 
   try {
-    const newPost = await Post.create({ title, description });
+    const user_id = req.user._id;
+    const newPost = await Post.create({ title, description, user_id });
     res.status(200).json(newPost);
   } catch (err) {
     res.status(500).json({ error: err.message });

@@ -22,7 +22,7 @@ const Post = ({ post }) => {
       </div>
 
       <div className="flex flex-col mt-4">
-        <span className="text-lg max-sm:text-base mb-1">{description}</span>
+        <span className="text-xl max-sm:text-base mb-1">{description}</span>
         <span className=" text-base max-sm:text-sm">
           {formatDistanceToNow(new Date(createdAt), {
             addSuffix: true,

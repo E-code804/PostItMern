@@ -1,21 +1,34 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { url } from "../backendURL";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const EditPostForm = ({ id, title, description }) => {
   const [error, setError] = useState("");
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
   const navigate = useNavigate();
+  const { user } = useAuthContext();
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!user) {
+      setError("You must be logged in to edit a post.");
+      return;
+    }
 
     try {
       const response = await fetch(`${url}/api/posts/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
         },
         body: JSON.stringify({
           title: newTitle,
@@ -58,6 +71,12 @@ const EditPostForm = ({ id, title, description }) => {
       />
 
       <button className="text-lg">Update Post</button>
+      <button
+        onClick={(e) => handleCancel(e)}
+        className="text-lg ml-2 bg-red-600 hover:bg-red-800"
+      >
+        Cancel
+      </button>
       {error && <div className="error">{error}</div>}
     </form>
   );

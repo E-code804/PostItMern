@@ -18,12 +18,12 @@ app.use(cors());
 //     credentials: true,
 //   })
 // );
-app.use((req, res, next) => {
-  // This func fires for every request that comes in.
-  // Must call the "next" function in order to move onto next piece of middleware.
-  console.log(req.path, req.method);
-  next();
-});
+// app.use((req, res, next) => {
+//   // This func fires for every request that comes in.
+//   // Must call the "next" function in order to move onto next piece of middleware.
+//   console.log(req.path, req.method);
+//   next();
+// });
 
 // Using the routes
 app.use("/api/posts", postRoutes);
