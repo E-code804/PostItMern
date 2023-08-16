@@ -36,17 +36,17 @@ const Home = () => {
           posts.map((post) => <Post key={post._id} post={post} />)
         ) : (
           <>
-            <div class="skeleton-loader mt-5 mb-[20px]">
+            <div class="skeleton-loader w-full mt-5 mb-[20px]">
               <div class="skeleton-line w-[25%] mb-[20px]"></div>
               <div class="skeleton-line mb-[20px]"></div>
               <div class="skeleton-line"></div>
             </div>
-            <div class="skeleton-loader mb-[20px]">
+            <div class="skeleton-loader w-full mb-[20px]">
               <div class="skeleton-line w-[25%] mb-[20px]"></div>
               <div class="skeleton-line mb-[20px]"></div>
               <div class="skeleton-line"></div>
             </div>
-            <div class="skeleton-loader">
+            <div class="skeleton-loader w-full">
               <div class="skeleton-line w-[25%] mb-[20px]"></div>
               <div class="skeleton-line mb-[20px]"></div>
               <div class="skeleton-line"></div>

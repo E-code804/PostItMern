@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white">
-      <div className="max-w-[1000px] my-0 mx-auto py-[50px] px-[20px] flex items-center justify-between">
+      <div className="max-w-[1000px] my-0 mx-auto py-[50px] flex items-center justify-between">
         <Link to="/">
           <h1 className="text-4xl max-sm:text-2xl font-semibold">
             {user ? user.username : ""}

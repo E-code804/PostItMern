@@ -36,7 +36,17 @@ const EditPost = () => {
     <>
       {title !== "" ? (
         <EditPostForm id={id} title={title} description={description} />
-      ) : null}
+      ) : (
+        <div className="w-full">
+          <div class="skeleton-loader mt-5 w-[50%] rounded mx-auto max-lg:w-[70%]">
+            <div class="skeleton-line w-[25%] mb-[50px]"></div>
+            <div class="skeleton-line w-[20%] mb-[50px]"></div>
+            <div class="skeleton-line mb-[50px]"></div>
+            <div class="skeleton-line w-[10%] mb-[50px]"></div>
+            <div class="skeleton-line"></div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
