@@ -70,10 +70,10 @@ const EditPostForm = ({ id, title, description }) => {
         className={`border border-black ${error !== "" ? "error" : ""}`}
       />
 
-      <button className="text-lg">Update Post</button>
+      <button className="text-lg mr-2 mb-2">Update Post</button>
       <button
         onClick={(e) => handleCancel(e)}
-        className="text-lg ml-2 bg-red-600 hover:bg-red-800"
+        className="text-lg bg-red-600 hover:bg-red-800 "
       >
         Cancel
       </button>
