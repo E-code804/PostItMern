@@ -4,7 +4,7 @@ import { useAuthContext } from "./useAuthContext";
 
 export const useSignUp = () => {
   const [error, setError] = useState(null);
-  const [isloading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { dispatch } = useAuthContext();
 
   const signUp = async (username, password) => {
@@ -29,5 +29,5 @@ export const useSignUp = () => {
     }
   };
 
-  return { signUp, error, isloading };
+  return { signUp, error, isLoading };
 };

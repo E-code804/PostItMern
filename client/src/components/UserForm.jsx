@@ -1,4 +1,3 @@
-import React from "react";
 import { BeatLoader } from "react-spinners";
 
 const UserForm = ({
@@ -46,7 +45,6 @@ const UserForm = ({
             </div>
           ) : (
             <button
-              disabled={isLoading}
               className="w-full primary-btn text-lg max-lg:text-base"
               type="submit"
             >
