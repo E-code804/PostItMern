@@ -30,7 +30,7 @@ const Home = () => {
     }
   }, [dispatch, user]);
   return (
-    <div className="w-full flex justify-between max-lg:flex-col-reverse">
+    <div className="max-w-[1000px] mx-auto flex justify-between max-lg:flex-col-reverse">
       <div className="w-[70%] max-lg:w-[100%]">
         {posts ? (
           posts.map((post) => <Post key={post._id} post={post} />)
