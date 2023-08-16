@@ -8,38 +8,38 @@ const UserForm = ({
   setPassword,
   formType,
   error,
+  isLoading,
 }) => {
   return (
-    <div className="flex flex-col items-center bg-gray-100">
-      <div className="w-[500px] max-lg:w-3/4 p-6 bg-white rounded shadow-md">
-        <h2 className="text-2xl font-semibold mb-4">{formType}</h2>
+    <div className="flex flex-col mt-5 items-center bg-gray-100">
+      <div className="w-[50%] max-lg:w-[70%] p-6 bg-white rounded shadow-md">
+        <h2 className="text-3xl max-lg:text-2xl font-semibold mb-4">
+          {formType}
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-lg font-semibold mb-2">Username</label>
+            <label className="user-form-label">Username</label>
             <input
-              className={`${
-                error !== "" ? "error" : ""
-              } w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-400`}
+              className={`${error ? "error" : ""} user-form-input`}
               type="text"
-              value={username}
               placeholder="Enter your username"
+              value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="mb-6">
-            <label className="block text-lg font-semibold mb-2">Password</label>
+            <label className="user-form-label">Password</label>
             <input
-              className={`${
-                error !== "" ? "error" : ""
-              } w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-400`}
+              className={`${error ? "error" : ""} user-form-input`}
               type="password"
-              value={password}
               placeholder="Enter your password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button
-            className="w-full bg-primary text-white py-2 rounded hover:bg-primarydark transition duration-300"
+            disabled={isLoading}
+            className="w-full primary-btn text-lg max-lg:text-base"
             type="submit"
           >
             {formType}
@@ -53,9 +53,7 @@ const UserForm = ({
           <p>Password: Demo2029!</p>
         </div>
       </div>
-      <div className={`${error !== "" ? "error" : ""}  w-[500px] max-lg:w-3/4`}>
-        {error}
-      </div>
+      {error && <div className="error w-[50%] max-lg:w-[70%]">{error}</div>}
     </div>
   );
 };

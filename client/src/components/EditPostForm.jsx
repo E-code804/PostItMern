@@ -39,9 +39,7 @@ const EditPostForm = ({ id, title, description }) => {
       onSubmit={handleSubmit}
       className="w-[50%] rounded my-5 mx-auto max-lg:w-[70%] bg-white py-6 px-5"
     >
-      <h3 className="text-2xl font-semibold mb-5 mt-[20px]">
-        Update your post
-      </h3>
+      <h3 className="form-h3">Update your post</h3>
 
       <label className="text-lg">Title:</label>
       <input

@@ -32,9 +32,7 @@ const AddPost = () => {
 
   return (
     <form className="w-[25%] max-lg:w-[70%]" onSubmit={handleSubmit}>
-      <h3 className="text-2xl max-sm:text-xl font-semibold mb-5 mt-[20px]">
-        Add a New Post
-      </h3>
+      <h3 className="form-h3">Add a New Post</h3>
 
       <label className="text-lg max-sm:text-base">Title:</label>
       <input
